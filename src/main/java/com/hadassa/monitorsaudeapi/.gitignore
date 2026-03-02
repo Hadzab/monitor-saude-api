@@ -1,0 +1,59 @@
+# ===============================
+# Build diretórios e arquivos
+# ===============================
+/target/
+*.class
+
+# Artefatos Java
+*.jar
+*.war
+*.ear
+
+# Maven específico (ignora diretório de dependências local)
+/!.mvn/wrapper/maven-wrapper.jar
+
+# ===============================
+# Logs e temporários
+# ===============================
+*.log
+*.tmp
+*.temp
+
+# ===============================
+# IntelliJ IDEA
+# ===============================
+/.idea/
+*.iml
+*.iws
+*.ipr
+
+# IntelliJ system folders
+/out/
+
+# ===============================
+# Eclipse / STS
+# ===============================
+.settings/
+.buildpath
+.project
+.classpath
+.springBeans
+.sts4-cache
+
+# ===============================
+# VS Code
+# ===============================
+.vscode/
+
+# ===============================
+# Sistema operacional
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Arquivos sensíveis
+# ===============================
+# Impede que application.properties com dados sensíveis
+# vá para o repositório
+application.properties
