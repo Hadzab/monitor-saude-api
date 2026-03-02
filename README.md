@@ -162,7 +162,7 @@ mvn clean install
 mvn spring-boot:run
 </code></pre>
 
-Acesse:
+Acesse por:
 <pre><code>http://localhost:8080/health</code></pre>
 
 <hr>
