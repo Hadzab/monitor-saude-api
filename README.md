@@ -68,7 +68,7 @@ In this case, the following message will appear in the application console/log:
 
 <h3>📥 Running Locally</h3>
 
-<pre><code>git clone https://github.com/your_username/monitor-saude-api.git
+<pre><code>git clone https://github.com/Hadzab/monitor-saude-api.git
 cd monitor-saude-api
 mvn clean install
 mvn spring-boot:run
@@ -180,7 +180,7 @@ Nesse caso, a seguinte mensagem será exibida no console/log da aplicação:
 
 <h3>📥 Executando Localmente</h3>
 
-<pre><code>git clone https://github.com/seu_usuario/monitor-saude-api.git
+<pre><code>git clone https://github.com/Hadzab/monitor-saude-api.git
 cd monitor-saude-api
 mvn clean install
 mvn spring-boot:run
