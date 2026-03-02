@@ -1,35 +1,35 @@
 <h1 align="center">📊 Monitor Saúde API</h1>
 
 <p align="center">
-  REST API for monitoring external services with Discord alerts.<br>
-  API REST para monitoramento de serviços externos com alertas via Discord.
+REST API for monitoring external services with Discord alerts.<br>
+API REST para monitoramento de serviços externos com alertas via Discord.
 </p>
 
 <p align="center">
-  <a href="#en-us">🇺🇸 English</a> |
-  <a href="#pt-br">🇧🇷 Português</a>
+<a href="#en-us">🇺🇸 English</a> | 
+<a href="#pt-br">🇧🇷 Português</a>
 </p>
 
 <hr>
 
-<!-- ========================== ENGLISH VERSION ========================== -->
+<!-- ================= ENGLISH VERSION ================= -->
 
 <h2 id="en-us">🇺🇸 English Version</h2>
 
 <h3>📌 Overview</h3>
 
 <p>
-A backend application built with Java and Spring Boot designed to monitor external services automatically.
-It periodically checks registered URLs, stores their status history (UP/DOWN), and sends alerts to Discord when status changes occur.
+A backend application built with Java and Spring Boot designed to automatically monitor external services.
+It periodically checks registered URLs, stores their status history (UP/DOWN), and sends Discord alerts whenever status changes occur.
 </p>
 
 <ul>
-  <li>✔ Layered architecture (controller → service → repository)</li>
-  <li>✔ DTO separation between persistence and API models</li>
-  <li>✔ Scheduled automatic monitoring (every 60 seconds)</li>
-  <li>✔ Discord webhook integration</li>
-  <li>✔ Persistent history using H2 in-memory database</li>
-  <li>✔ Clean RESTful endpoints</li>
+<li>✔ Layered architecture (controller → service → repository)</li>
+<li>✔ DTO separation between persistence and API models</li>
+<li>✔ Scheduled automatic monitoring (every 60 seconds)</li>
+<li>✔ Discord webhook integration</li>
+<li>✔ Persistent history using H2 in-memory database</li>
+<li>✔ Clean RESTful endpoints</li>
 </ul>
 
 <hr>
@@ -37,15 +37,15 @@ It periodically checks registered URLs, stores their status history (UP/DOWN), a
 <h3>🚀 Automatic Monitoring</h3>
 
 <ul>
-  <li>✔ Runs every 60 seconds</li>
-  <li>✔ Checks all enabled services</li>
-  <li>✔ Stores history for each check</li>
-  <li>✔ Sends alerts when status changes</li>
+<li>✔ Runs every 60 seconds</li>
+<li>✔ Checks all enabled services</li>
+<li>✔ Stores history for each check</li>
+<li>✔ Sends alerts when status changes</li>
 </ul>
 
 <p>
 If no service is registered or enabled, the monitoring process (AutoCheck) continues running normally.
-In this case, the following message is displayed in the application console/log:
+In this case, the following message will appear in the application console/log:
 </p>
 
 <pre><code>⚠ No registered or enabled services.</code></pre>
@@ -55,13 +55,13 @@ In this case, the following message is displayed in the application console/log:
 <h3>📊 Main Endpoints</h3>
 
 <table>
-  <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
-  <tr><td>GET</td><td>/health</td><td>Checks if API is running</td></tr>
-  <tr><td>GET</td><td>/services</td><td>List all services</td></tr>
-  <tr><td>POST</td><td>/services</td><td>Create new service</td></tr>
-  <tr><td>PUT</td><td>/services/{id}</td><td>Update service</td></tr>
-  <tr><td>DELETE</td><td>/services/{id}</td><td>Delete service</td></tr>
-  <tr><td>GET</td><td>/services/{id}/history</td><td>Service history</td></tr>
+<tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+<tr><td>GET</td><td>/health</td><td>Check if API is running</td></tr>
+<tr><td>GET</td><td>/services</td><td>List all services</td></tr>
+<tr><td>POST</td><td>/services</td><td>Create new service</td></tr>
+<tr><td>PUT</td><td>/services/{id}</td><td>Update service</td></tr>
+<tr><td>DELETE</td><td>/services/{id}</td><td>Delete service</td></tr>
+<tr><td>GET</td><td>/services/{id}/history</td><td>Service history</td></tr>
 </table>
 
 <hr>
@@ -79,6 +79,30 @@ Access:
 
 <hr>
 
+<h3>🧪 Testing the API (Postman / Insomnia)</h3>
+
+<p>You can test the endpoints using Postman, Insomnia, or any REST client.</p>
+
+Base URL:
+<pre><code>http://localhost:8080</code></pre>
+
+Example – Create Service:
+<pre><code>POST http://localhost:8080/services
+
+{
+  "name": "Netflix",
+  "url": "https://www.netflix.com"
+}
+</code></pre>
+
+Example – Get All Services:
+<pre><code>GET http://localhost:8080/services</code></pre>
+
+Example – Get Service History:
+<pre><code>GET http://localhost:8080/services/{id}/history</code></pre>
+
+<hr>
+
 <h3>📬 Discord Webhook Configuration</h3>
 
 Add to <code>application.properties</code>:
@@ -92,15 +116,15 @@ Add to <code>application.properties</code>:
 <h3>🚀 Future Improvements</h3>
 
 <ul>
-  <li>Authentication & Authorization</li>
-  <li>Monitoring dashboard</li>
-  <li>Email/SMS alerts</li>
-  <li>Dynamic interval configuration</li>
+<li>Authentication & Authorization</li>
+<li>Monitoring dashboard</li>
+<li>Email/SMS alerts</li>
+<li>Dynamic interval configuration</li>
 </ul>
 
 <hr>
 
-<!-- ========================== PORTUGUESE VERSION ========================== -->
+<!-- ================= PORTUGUESE VERSION ================= -->
 
 <h2 id="pt-br">🇧🇷 Versão em Português</h2>
 
@@ -112,12 +136,12 @@ Verifica URLs periodicamente, registra histórico de status (UP/DOWN) e envia al
 </p>
 
 <ul>
-  <li>✔ Arquitetura em camadas (controller → service → repository)</li>
-  <li>✔ Uso de DTOs separando modelo de persistência da API</li>
-  <li>✔ Monitoramento automático a cada 60 segundos</li>
-  <li>✔ Integração com webhook do Discord</li>
-  <li>✔ Histórico persistido com banco H2 em memória</li>
-  <li>✔ Endpoints REST organizados</li>
+<li>✔ Arquitetura em camadas (controller → service → repository)</li>
+<li>✔ Uso de DTOs separando modelo de persistência da API</li>
+<li>✔ Monitoramento automático a cada 60 segundos</li>
+<li>✔ Integração com webhook do Discord</li>
+<li>✔ Histórico persistido com banco H2 em memória</li>
+<li>✔ Endpoints REST organizados</li>
 </ul>
 
 <hr>
@@ -125,10 +149,10 @@ Verifica URLs periodicamente, registra histórico de status (UP/DOWN) e envia al
 <h3>🚀 Monitoramento Automático</h3>
 
 <ul>
-  <li>✔ Executa a cada 60 segundos</li>
-  <li>✔ Verifica todos os serviços habilitados</li>
-  <li>✔ Armazena histórico de cada verificação</li>
-  <li>✔ Envia alertas quando o status muda</li>
+<li>✔ Executa a cada 60 segundos</li>
+<li>✔ Verifica todos os serviços habilitados</li>
+<li>✔ Armazena histórico de cada verificação</li>
+<li>✔ Envia alertas quando o status muda</li>
 </ul>
 
 <p>
@@ -143,13 +167,13 @@ Nesse caso, a seguinte mensagem será exibida no console/log da aplicação:
 <h3>📊 Endpoints Principais</h3>
 
 <table>
-  <tr><th>Método</th><th>Endpoint</th><th>Descrição</th></tr>
-  <tr><td>GET</td><td>/health</td><td>Verifica se a API está funcionando</td></tr>
-  <tr><td>GET</td><td>/services</td><td>Lista todos os serviços</td></tr>
-  <tr><td>POST</td><td>/services</td><td>Cria novo serviço</td></tr>
-  <tr><td>PUT</td><td>/services/{id}</td><td>Atualiza serviço</td></tr>
-  <tr><td>DELETE</td><td>/services/{id}</td><td>Remove serviço</td></tr>
-  <tr><td>GET</td><td>/services/{id}/history</td><td>Histórico do serviço</td></tr>
+<tr><th>Método</th><th>Endpoint</th><th>Descrição</th></tr>
+<tr><td>GET</td><td>/health</td><td>Verifica se a API está funcionando</td></tr>
+<tr><td>GET</td><td>/services</td><td>Lista todos os serviços</td></tr>
+<tr><td>POST</td><td>/services</td><td>Cria novo serviço</td></tr>
+<tr><td>PUT</td><td>/services/{id}</td><td>Atualiza serviço</td></tr>
+<tr><td>DELETE</td><td>/services/{id}</td><td>Remove serviço</td></tr>
+<tr><td>GET</td><td>/services/{id}/history</td><td>Histórico do serviço</td></tr>
 </table>
 
 <hr>
@@ -167,6 +191,30 @@ Acesse por:
 
 <hr>
 
+<h3>🧪 Testando a API (Postman / Insomnia)</h3>
+
+<p>Você pode testar os endpoints utilizando Postman, Insomnia ou qualquer cliente REST.</p>
+
+URL base:
+<pre><code>http://localhost:8080</code></pre>
+
+Exemplo – Criar Serviço:
+<pre><code>POST http://localhost:8080/services
+
+{
+  "name": "Netflix",
+  "url": "https://www.netflix.com"
+}
+</code></pre>
+
+Exemplo – Listar Serviços:
+<pre><code>GET http://localhost:8080/services</code></pre>
+
+Exemplo – Histórico do Serviço:
+<pre><code>GET http://localhost:8080/services/{id}/history</code></pre>
+
+<hr>
+
 <h3>📬 Configuração do Webhook do Discord</h3>
 
 Adicionar no <code>application.properties</code>:
@@ -180,22 +228,22 @@ Adicionar no <code>application.properties</code>:
 <h3>🚀 Próximas Melhorias</h3>
 
 <ul>
-  <li>Autenticação e autorização</li>
-  <li>Dashboard de monitoramento</li>
-  <li>Alertas por email/SMS</li>
-  <li>Configuração dinâmica de intervalos</li>
+<li>Autenticação e autorização</li>
+<li>Dashboard de monitoramento</li>
+<li>Alertas por e-mail/SMS</li>
+<li>Configuração dinâmica de intervalos</li>
 </ul>
 
 <hr>
 
-<h2>🧡 Author</h2>
+<h2>🧡 Autor</h2>
 
 <p><strong>Hadassa</strong> — Java Backend Developer</p>
 
-<p>⭐ If you liked this project, leave a star on GitHub!</p>
+<p>⭐ Se você gostou deste projeto, deixe uma estrela no GitHub!</p>
 
 <hr>
 
-<h2>📄 License</h2>
+<h2>📄 Licença</h2>
 
-<p>This project is licensed under the MIT License.</p>
+<p>Este projeto está licenciado sob a Licença MIT.</p>
